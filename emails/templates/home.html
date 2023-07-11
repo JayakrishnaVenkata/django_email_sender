@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel="stylesheet" href={% static 'style.css'%}/>
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Send mail</title>
+  </head>
+  <body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s8 offset-s2">
+                <div id="content" class="m2">
+                    
+                    <header id="header" class=" pink darken-1">
+                        Send new Email
+                    </header>
+
+                    <form id="send-mail" action="" method="post" class="col s10">{% csrf_token %}
+                        <div class="row">
+                                <div class="input-field col s12">
+                                    <label for="email">For:</label>
+                                    <input id="email" name="email" type="email">
+                                </div>
+                                <div class="input-field col s12">
+                                    <label for="subject">Subject:</label>
+                                    <input id="subject" name="subject" type="text">
+                                </div>
+                        </div>
+
+                        <div class="row">
+                                <div class="input-field col s12">
+                                    <label for="message">Message: </label>
+                                    <textarea id="message" name="message" class="materialize-textarea"></textarea>
+                                </div>
+                        </div>
+                            
+                            
+                        <div class="row">
+                                <div class="col s6">
+                                    <button id="send" class="btn waves-effect waves-light  pink darken-2" type="submit" name="action">Send
+                                            <i class="material-icons right">send</i>
+                                    </button>
+                                </div>
+                                <div class="col s6">
+                                    <button id="resetBtn" class="btn waves-effect waves-light light-blue darken-2" type="submit">Reset
+                                            <i class="material-icons right">delete</i>
+                                    </button>
+                                </div>
+                                {% comment %} <div>
+                                    <input type="submit"/>
+                                </div> {% endcomment %}
+                        </div>
+                    </form> 
+                    
+                </div> <!--.contenido-->
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+ 
+  </body>
+</html>
+      
